@@ -1,1 +1,11 @@
-// Entry point for your Sass build
+// Mixins
+@use "./mixins";
+
+// Configuration
+@use "./config";
+
+// Components
+@use "./components";
+
+// Layouts
+@use "./layouts";

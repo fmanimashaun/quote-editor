@@ -3,7 +3,7 @@ puts "\n== Seeding quotes =="
 require 'factory_bot_rails'
 
 # Create 10 quotes with Faker data
-10.times do
+2.times do
   FactoryBot.create(:quote)
 end
 
