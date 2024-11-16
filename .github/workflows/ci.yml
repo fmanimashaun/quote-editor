@@ -52,5 +52,8 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      - name: Precompile assets
+        run: bundle exec rails assets:precompile RAILS_ENV=test
+
       - name: Run RSpec tests
         run: bin/rspec --format documentation
