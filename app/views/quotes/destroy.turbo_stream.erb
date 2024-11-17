@@ -1,2 +1,6 @@
 <%= turbo_stream.remove "quote_#{@quote.id}" %>
+<% if current_company.quotes.reload.none? %>
+ <%= turbo_stream.update Quote.new, partial: "quotes/empty_state" %>
+  <%= turbo_stream.update "new_quote_button", "" %>
+<% end %>
 <%= render_turbo_stream_flash_messages %>
