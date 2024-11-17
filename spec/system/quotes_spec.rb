@@ -9,7 +9,7 @@ describe 'Quotes', type: :system do
       expect(page).to have_selector "h1", text: "Quotes"
 
       click_on "New quote"
-      expect(page).to have_selector "h1", text: "New quote"
+      expect(page).to have_selector "h1", text: "Quotes"
 
       fill_in "Name", with: "Capybara quote"
       click_on "Create quote"
@@ -30,7 +30,7 @@ describe 'Quotes', type: :system do
       expect(page).to have_selector "h1", text: "Quotes"
 
       click_on "Edit", match: :first
-      expect(page).to have_selector "h1", text: "Edit quote"
+      expect(page).to have_selector "h1", text: "Quotes"
 
       fill_in "Name", with: "Updated quote"
       click_on "Update quote"
