@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Quote, type: :model do
+describe Quote, type: :model do
   context "With a valid factory" do
     let!(:quote) { build(:quote) }
 

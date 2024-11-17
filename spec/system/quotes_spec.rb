@@ -1,7 +1,19 @@
 require 'rails_helper'
 
 describe 'Quotes', type: :system do
-  let!(:quote) { create(:quote) }
+  let!(:user) { create(:user) } # Create a user for authentication
+  let!(:quote) { create(:quote, company: user.company) } # Associate quote with the user's company
+
+  before do
+    # Simulate signing in as the user
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    # Verify redirection to the home page
+    expect(page).to have_current_path(root_path)
+  end
 
   context 'when managing quotes' do
     it 'creates a new quote' do
