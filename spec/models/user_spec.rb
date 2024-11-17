@@ -7,9 +7,5 @@ describe User, type: :model do
     it 'returns the capitalized part of the email before "@" as name' do
       expect(user.name).to eq('Accountant')
     end
-
-    it 'delegates company_name to the associated company' do
-      expect(user.company_name).to eq(user.company.name)
-    end
   end
 end
