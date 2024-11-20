@@ -5,9 +5,9 @@
   <div class="header">
     <h1>Quotes</h1>
     <%= turbo_frame_tag "new_quote_button" do %>
-    <% if @quotes.present? %>
-    <%= link_to "New quote", new_quote_path, data: { turbo_frame: dom_id(Quote.new) }, class: "btn btn--primary" %>
-    <% end %>
+      <% if @quotes.present? %>
+        <%= link_to "New quote", new_quote_path, data: { turbo_frame: dom_id(Quote.new) }, class: "btn btn--primary" %>
+      <% end %>
     <% end %>
   </div>
 
@@ -15,8 +15,8 @@
   <%= turbo_frame_tag Quote.new %>
 
   <%= turbo_frame_tag "quotes" do %>
-  <%= render "quotes/empty_state" %>
-  <%= render partial: "quote", collection: @quotes, as: :quote %>
+    <%= render "quotes/empty_state" %>
+    <%= render partial: "quote", collection: @quotes, as: :quote %>
   <% end %>
 
 </main>
